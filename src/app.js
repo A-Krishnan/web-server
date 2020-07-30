@@ -5,7 +5,7 @@ const geocoding=require('./coding/geocoding')
 const forecasting=require('./coding/forecasting')
 
 const app=express()
-
+const port=process.env.PORT || 3000
 
 const viewspath=path.join(__dirname,'../template/views')
 const partialpath=path.join(__dirname,'../template/partials')
@@ -105,8 +105,8 @@ app.get('*',(req,res)=>{
     })
 })
 
-app.listen(3000,()=>{
+app.listen(port,()=>{
  
-    console.log('Server is on port 3000')
+    console.log('Server is on port'+ port)
 
 })
